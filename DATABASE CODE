@@ -1,0 +1,91 @@
+#for booking table
+CREATE TABLE `booking` (
+  `booking_id` varchar(45) NOT NULL,
+  `Owner_phone` varchar(10) NOT NULL,
+  `Costumer_phone` varchar(10) NOT NULL,
+  `Regi_time` varchar(45) DEFAULT NULL,
+  `Agree_duration` varchar(45) DEFAULT NULL,
+  `finale_rent` varchar(45) DEFAULT NULL,
+  `Compeny_charge` varchar(45) DEFAULT NULL,
+  `R_visit_time` varchar(45) DEFAULT NULL,
+  `Agent_name` varchar(45) DEFAULT NULL,
+  `Discription` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`booking_id`,`Owner_phone`,`Costumer_phone`),
+  UNIQUE KEY `booking_id_UNIQUE` (`booking_id`),
+  UNIQUE KEY `Owner_phone_UNIQUE` (`Owner_phone`),
+  UNIQUE KEY `Costumer_phone_UNIQUE` (`Costumer_phone`),
+  UNIQUE KEY `Regi_time_UNIQUE` (`Regi_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+#for customer table
+
+CREATE TABLE `costumer` (
+  `c_id` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `mobile` varchar(10) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `adhar` varchar(45) NOT NULL,
+  `addr` varchar(45) DEFAULT NULL,
+  `regi_time` varchar(45) DEFAULT NULL,
+  `nation` varchar(45) DEFAULT NULL,
+  `local_person` varchar(45) DEFAULT NULL,
+  `person_con` varchar(10) DEFAULT NULL,
+  `parea1` varchar(45) DEFAULT NULL,
+  `parea2` varchar(45) DEFAULT NULL,
+  `parea3` varchar(45) DEFAULT NULL,
+  `room_type` varchar(45) DEFAULT NULL,
+  `no_of_rooms` varchar(45) DEFAULT NULL,
+  `kitchen` varchar(45) DEFAULT NULL,
+  `att_wash` varchar(45) DEFAULT NULL,
+  `rent` varchar(45) DEFAULT NULL,
+  `no_of_person` varchar(45) DEFAULT NULL,
+  `deposite` varchar(45) DEFAULT NULL,
+  `other_remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`mobile`,`c_id`),
+  UNIQUE KEY `c_id_UNIQUE` (`c_id`),
+  UNIQUE KEY `mobile_UNIQUE` (`mobile`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+#for register table
+
+CREATE TABLE `register` (
+  `fmane` varchar(45) NOT NULL,
+  `lname` varchar(45) DEFAULT NULL,
+  `contact` varchar(11) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `squestion` varchar(45) DEFAULT NULL,
+  `answer` varchar(10) DEFAULT NULL,
+  `password` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`contact`,`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+#for room or owner table
+
+CREATE TABLE `room` (
+  `c_id` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `mobile` varchar(10) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `adhar` varchar(45) NOT NULL,
+  `addr` varchar(45) DEFAULT NULL,
+  `regi_time` varchar(45) DEFAULT NULL,
+  `nation` varchar(45) DEFAULT NULL,
+  `local_person` varchar(45) DEFAULT NULL,
+  `person_con` varchar(45) DEFAULT NULL,
+  `parea1` varchar(45) DEFAULT NULL,
+  `parea2` varchar(45) DEFAULT NULL,
+  `parea3` varchar(45) DEFAULT NULL,
+  `room_type` varchar(45) DEFAULT NULL,
+  `no_of_rooms` varchar(45) DEFAULT NULL,
+  `kitchen` varchar(45) DEFAULT NULL,
+  `att_wash` varchar(45) DEFAULT NULL,
+  `rent` varchar(45) DEFAULT NULL,
+  `no_of_person` varchar(45) DEFAULT NULL,
+  `deposite` varchar(45) DEFAULT NULL,
+  `other_remark` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`c_id`,`mobile`),
+  UNIQUE KEY `c_id_UNIQUE` (`c_id`),
+  UNIQUE KEY `mobile_UNIQUE` (`mobile`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
